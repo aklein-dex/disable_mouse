@@ -1,0 +1,59 @@
+##############################################################################
+### tabwin transparency tweak
+style "tab-win-tweak" 
+{
+      fg[NORMAL]        = "#444444"
+      fg[PRELIGHT]      = "#444444"
+      fg[SELECTED]      = "#ffffff"
+      fg[INSENSITIVE]   = "#444444"
+      fg[ACTIVE]        = "#ffffff"
+      engine "pixmap"
+        {
+                image
+                {
+                        function                = BOX
+                        recolorable             = TRUE
+                        state                   = PRELIGHT
+                        file                    = "panel-button-hover.png"
+                        border                  = { 1, 1, 0, 0 }
+                        stretch                 = TRUE
+                }
+                #image
+                #{
+                #        function                = BOX
+                #        recolorable             = TRUE
+                #        state                   = ACTIVE
+                #        file                    = "panel-button-hover.png"
+                #        border                  = { 1, 1, 0, 0 }
+                #        stretch                 = TRUE
+                #}
+                image
+                {
+                        function                = BOX
+                        recolorable             = TRUE
+                        state                   = NORMAL
+                        file                    = "panel-button-hover.png"
+                        border                  = { 1, 1, 0, 0 }
+                        stretch                 = TRUE
+                }
+               image
+                {
+                        function                = BOX
+                        recolorable             = TRUE
+                        state                   = INSENSITIVE
+                        file                    = "panel-button-hover.png"
+                        border                  = { 1, 1, 0, 0 }
+                        stretch                 = TRUE
+                }
+                #image
+                #{
+                #        function                = BOX
+                #        recolorable             = TRUE
+                #        state                   = SELECTED
+                #        file                    = "panel-button-hover.png"
+                #        border                  = { 1, 1, 0, 0 }
+                #        stretch                 = TRUE
+                #}                    
+        }
+}
+widget "xfwm4-tabwin*GtkButton*" style "tab-win-tweak"
